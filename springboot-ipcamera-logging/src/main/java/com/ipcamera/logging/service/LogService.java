@@ -10,4 +10,6 @@ public interface LogService {
     void saveLog(String serviceName,String info);
 
     List<LogResponseDto> getAllLogs();
+
+    List<LogResponseDto> getCowriteAllLogs();
 }

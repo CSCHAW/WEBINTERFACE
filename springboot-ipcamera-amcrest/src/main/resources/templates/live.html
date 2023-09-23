@@ -12,6 +12,8 @@
     <script>jQuery.noConflict();</script>
     <script src="/css/live/files/jquery.pubsub.js"></script>
     <script src="/css/live/files/extend.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
     <script type="text/javascript">// forced to add parameters，ensure the FF image loading do not fail
     var cssList = ['css/reset.css', 'css/ui.css', 'css/custom.css', 'css/skin.css', 'css/pictures.css', 'css/main.css', 'css/alarm.css', 'css/set.css', 'css/resize.css', 'css/playback.css', 'jsBase/widget/css/ui.css', 'jsBase/widget/css/skin.css', 'css/fn.css', 'css/thermal.css', 'jsBase/widget/css/colorpicker.css'];
 
@@ -125,24 +127,24 @@
     </form>
     <ul class="u-tab main" style="right:0px">
         <li data-for="preview" class="current" style="margin-left: 101.5px;"><span t="med.Previews"
-                                                                                   title="Live">Live</span></li>
+                                                                                   title="Live" onclick="buttonClick('live')">Live</span></li>
         <span class="vertical_line"></span>
         <li data-for="ptz" style="display: none;"><span t="per.Ptz" title="PTZ">PTZ</span></li>
-        <li data-for="playback" class=""><span t="sto.PlayBack" title="Playback">Playback</span></li>
+        <li data-for="playback" class=""><span t="sto.PlayBack" title="Playback" onclick="buttonClick('playback')">Playback</span></li>
         <span class="vertical_line"></span> <a class="pre_cloud text-ellipsis" id="b_cloudStorage"
                                                t="sto.CloudSave;title::sto.CloudSave"
                                                href="https://www.amcrestcloud.com/" target="_blank"
-                                               title="Cloud Storage">Cloud Storage</a>
+                                               title="Cloud Storage" onclick="buttonClick('cloud storage')" >Cloud Storage</a>
         <li data-for="report" style="display: none;"><span t="sto.Report" title="Report">Report</span></li>
         <li data-for="pictures" style="display: none;"><span t="com.picture" title="Picture">Picture</span></li>
         <li data-for="logout" class="logout-l" id="tab_out" style="float:right"><span t="com.Logout" title="Logout"><a onclick="document.forms['logoutForm'].submit()">Logout</a></span>
         </li>
         <li data-for="alarm" class="fn-relative alarm-l" id="tab_alarm" style="float:right"><span t="per.Alarm"
-                                                                                                  title="Alarm">Alarm</span>
+                                                                                                  title="Alarm" onclick="buttonClick('alarm')">Alarm</span>
             <div class="main-nav-alarm" id="d_alarmtip" style="display:none"></div>
         </li>
         <li id="tab_set" class="set-l" data-for="set" style="float:right"><span t="com.Setting"
-                                                                                title="Setup">Setup</span></li>
+                                                                                title="Setup" onclick="buttonClick('setup')">Setup</span></li>
         <span class="vertical_line"></span>
 
     </ul>
@@ -150,9 +152,9 @@
         <div class="tab-panel current" data-page="preview" style="background-color:#191919">
             <div class="main-top">
                 <div class="main-top-iconbar"><a class="ui-button-main fn-left current" href="javascript:;"
-                                                 btn-for="onConnectMain" index="0" t="med.MainStream">Main Stream</a> <a
+                                                 btn-for="onConnectMain" index="0" t="med.MainStream" onclick="buttonClick('main stream')">Main Stream</a> <a
                         class="ui-button-main fn-left" href="javascript:;" btn-for="onConnectExtra" index="1"
-                        t="med.AuxiliaryStream" style="">Sub Stream</a> <a class="ui-button-main fn-left"
+                        t="med.AuxiliaryStream" style="" onclick="buttonClick('sub stream')">Sub Stream</a> <a class="ui-button-main fn-left"
                                                                            href="javascript:;" btn-for="onConnectExtra"
                                                                            index="2" t="med.AuxiliaryStream2"
                                                                            style="display:none">Sub Stream 2</a> <a
@@ -1853,7 +1855,7 @@ them.(please do not use special symbols like ' " ; : &amp; )</span></div>
             style="position: absolute; top: 0px; left: 127.389px; width: 750.222px; height: 422px; display: block;"
             width="1280" height="720"></canvas>
     <video style="position: absolute; top: 0px; left: 127.389px; width: 750.222px; height: 422px; display: block;" width="1280" height="720"  autoplay loop playsinline>
-        <source src="/video/videoplayback.mp4" type="video/mp4">
+        <source src="/video/traffic.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div id="downloadCert" class="download-plugin fn-hide"

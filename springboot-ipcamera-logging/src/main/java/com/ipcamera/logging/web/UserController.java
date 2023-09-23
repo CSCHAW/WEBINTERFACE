@@ -38,6 +38,7 @@ public class UserController {
 
         if (securityService.isAuthenticated(userDto.getUsername(),userDto.getPassword())) {
             logController.gelAllLogs(model);
+            logController.gelCowriteAllLogs(model);
             model.addAttribute("userName",userDto.getUsername());
             return "welcome";
         }else{
@@ -49,6 +50,12 @@ public class UserController {
     @GetMapping({ "/welcome"})
     public String welcome(Model model) {
         return "welcome";
+    }
+
+    @GetMapping({ "/cowrite"})
+    public String cowrite(Model model) {
+        logController.gelCowriteAllLogs(model);
+        return "cowrite";
     }
 
 }

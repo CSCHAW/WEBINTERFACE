@@ -32,4 +32,10 @@ public class LogController {
         model.addAttribute("logs",logs);
     }
 
+    @GetMapping("/cowriteAll")
+    public void gelCowriteAllLogs(Model model) {
+        List<LogResponseDto> logs=logService.getCowriteAllLogs();
+        model.addAttribute("cowritelogs",logs);
+    }
+
 }

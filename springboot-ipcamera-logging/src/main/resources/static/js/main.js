@@ -12,6 +12,14 @@
             location.reload();
         });
 
+
+        $("#cowrite").click(function(){
+            table.search( "cowrite" ).draw();
+
+            // window.location.replace("/cowrite");
+        });
+
+
     });
 
 

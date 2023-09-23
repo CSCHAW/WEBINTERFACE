@@ -30,4 +30,10 @@ public class LogServiceImpl implements LogService{
         LogMapper logMapper = Mappers.getMapper(LogMapper.class);
         return logMapper.toLogResponseDto(logRepository.findAll());
     }
+
+    @Override
+    public List<LogResponseDto> getCowriteAllLogs() {
+        LogMapper logMapper = Mappers.getMapper(LogMapper.class);
+        return logMapper.toLogResponseDto(logRepository.findByServiceName("cowrite"));
+    }
 }
